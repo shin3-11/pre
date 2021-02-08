@@ -1,0 +1,181 @@
+// variables
+// red
+$primary: #70001a;
+
+$secondary: #172629;
+// dark green
+$success: #0db1d5;
+// light green
+$info: #00ca00;
+$warning: #009fff;
+// $danger:;
+// $light:;
+// $dark:;
+
+
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #5d5d5d;
+$gray-600: #353535;
+$gray-700: #1d1d1d;
+$gray-800: #17191c;
+$gray-900: #020f14;
+$black: #000;
+
+.text-gray-100 {
+  color: #f8f9fa;
+}
+
+.text-gray-200 {
+  color: #e9ecef;
+}
+
+.text-gray-300 {
+  color: #dee2e6;
+}
+
+.text-gray-400 {
+  color: #ced4da;
+}
+
+.text-gray-500 {
+  color: #5d5d5d;
+}
+
+.text-gray-600 {
+  color: #353535;
+}
+
+.text-gray-700 {
+  color: #1d1d1d;
+}
+
+.text-gray-800 {
+  color: #17191c;
+}
+
+.text-gray-900 {
+  color: #020f14;
+}
+
+.bg-gray-100 {
+  background-color: #f8f9fa;
+}
+
+.bg-gray-200 {
+  background-color: #e9ecef;
+}
+
+.bg-gray-300 {
+  background-color: #dee2e6;
+}
+
+.bg-gray-400 {
+  background-color: #ced4da;
+}
+
+.bg-gray-500 {
+  background-color: #5d5d5d;
+}
+
+.bg-gray-600 {
+  background-color: #353535;
+}
+
+.bg-gray-700 {
+  background-color: #1d1d1d;
+}
+
+.bg-gray-800 {
+  background-color: #17191c;
+}
+
+.bg-gray-900 {
+  background-color: #020f14;
+}
+
+
+
+@import "bootstrap-4.6.0/scss/bootstrap.scss";
+
+.overlay-box::before {
+  border-radius: $border-radius !important;
+  background-color: rgba(0, 0, 0, 0.63);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: ' ';
+  z-index: 79;
+}
+
+// add original
+img {
+  max-width: 100%;
+}
+
+body {
+  background-color: $gray-900;
+  color: $light;
+  line-height: 2.0;
+  font-size: 0.9rem;
+}
+
+.bk-cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vertical-text {
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+}
+
+.carousel-inner img,
+.imgBox {
+  min-height: 300px;
+  max-height: 600px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.float-num {
+  position: absolute;
+  left: -50px;
+  font-size: 8rem;
+  top: -140px;
+}
+
+small {
+  font-size: 60%;
+  font-weight: 200;
+}
+
+.overlay-box::before {
+  background-color: rgba(0, 0, 0, 0.63);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: ' ';
+  z-index: 79;
+}
+
+.overlay-child {
+  z-index: 80;
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.min-vh-50 {
+  min-height: 50vh !important;
+}
