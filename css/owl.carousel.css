@@ -18,7 +18,6 @@
 	position: relative;
 	width: 100%;
 	-ms-touch-action: pan-y;
-        clear: both;
 }
 .owl-carousel .owl-wrapper{
 	display: none;
@@ -39,16 +38,7 @@
 }
 	
 .owl-carousel .owl-item{
-    float: left;
-    cursor: url("../images/icon/icon-move.png"), move;
-}
-.light-pagination .owl-item{
 	float: left;
-        cursor: url("../images/icon/icon-move-light.png"), move !important;
-}
-.black-pagination .owl-item{
-	float: left;
-        cursor: url("../images/icon/icon-move-black.png"), move !important;
 }
 .owl-controls .owl-page,
 .owl-controls .owl-buttons div{
@@ -65,19 +55,55 @@
 
 /* mouse grab icon */
 .grabbing { 
-    cursor: deafult;
+    cursor:url(grabbing.png) 8 8, move;
 }
 
 /* fix */
 .owl-carousel  .owl-wrapper,
 .owl-carousel  .owl-item{
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility:    hidden;
-    -ms-backface-visibility:     hidden;
-    -webkit-transform: translate3d(0,0,0);
-    -moz-transform: translate3d(0,0,0);
-    -ms-transform: translate3d(0,0,0);
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility:    hidden;
+	-ms-backface-visibility:     hidden;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
 }
-.cursor-default .owl-item {
-    cursor: default !important
+
+/* Feel free to change duration  */ 
+.animated  {
+  -webkit-animation-duration : 1000 ms  ;
+  animation-duration : 1000 ms  ;
+  -webkit-animation-fill-mode : both  ;
+  animation-fill-mode : both  ;
+}  
+/* .owl-animated-out - only for current item */ 
+/* This is very important class. Use z-index if you want move Out item above In item */ 
+.owl-animated-out {
+  z-index : 1 
+   }
+/* .owl-animated-in - only for upcoming item
+/* This is very important class. Use z-index if you want move In item above Out item */ 
+.owl-animated-in {
+  z-index : 0 
+   }
+/* .fadeOut is style taken from Animation.css and this is how it looks in owl.carousel.css:  */ 
+.fadeOut  {
+  -webkit-animation-name : fadeOut  ;
+  animation-name : fadeOut  ;
+}  
+@-webkit-keyframes  fadeOut  {
+  0% {
+    opacity : 1   ;
+  }  
+  100% {
+    opacity : 0   ;
+  }  
+}
+@keyframes  fadeOut  {
+  0% {
+    opacity : 1   ;
+  }  
+  100% {
+    opacity : 0   ;
+  }  
 }

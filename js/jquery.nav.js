@@ -51,9 +51,8 @@
 			// Introduce defaults that can be extended either
 			// globally or using an object literal.
 			this.config = $.extend({}, this.defaults, this.options, this.metadata);
-                        
-                        //this.$nav = this.$elem.find(this.config.navItems)
-			this.$nav = this.$elem.find(this.config.navItems).not(".directpage");
+
+			this.$nav = this.$elem.find(this.config.navItems);
 
 			//Filter any links out of the nav
 			if(this.config.filter !== '') {
@@ -183,8 +182,7 @@
 			var $parent;
 
 			//If the position is set
-			if(position !== null) 
-                        {
+			if(position !== null) {
 				$parent = this.$elem.find('a[href$="#' + position + '"]').parent();
 
 				//If it's not already the current section
