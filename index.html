@@ -21,49 +21,46 @@
     <link rel="stylesheet" href="css/nivo-lightbox.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css">
 
 </head>
 
 <body>
-
     <!-- Header Section Start -->
     <header id="home" class="hero-area">
-        <nav class="navbar navbar-expand-xx bg-inverse fixed-top scrolling-navbar text-center">
-            <div class="container py-3">
-                <a href="index.html" class="navbar-brand font1 text-gold">PLAISIR</a>
-                <button class="navbar-toggler d-none" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="lni-menu"></i>
+        <div class="drawer drawer--right fixed-top scrolling-navbar bg-inverse navbar navbar-expand-xx">
+            <header role="banner">
+                <a href="index.html" class="navbar-brand font1 text-gold py-3 px-2">PLAISIR</a>
+                <button type="button" class="drawer-toggle drawer-hamburger">
+                    <span class="sr-only"></span>
+                    <span class="drawer-hamburger-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse py-5" id="navbarCollapse">
-                    <ul class="navbar-nav mr-auto w-100 justify-content-end">
-                        <li class="nav-item">
-                            <a class="nav-link page-scroll text-white" href="#home">Home</a>
+                <nav class="drawer-nav bg-rose2" role="navigation">
+                    <ul class="drawer-menu mt-5">
+                        <li class="nav-item py-1 font2">
+                            <a class="nav-link page-scroll text-gold font1" href="#home">トップ</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link page-scroll text-white" href="#services">About</a>
+                        <li class="nav-item py-1 font2">
+                            <a class="nav-link page-scroll text-gold font1" href="#blog">サービス</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link page-scroll text-white" href="#features">Services</a>
+                        <li class="nav-item py-1 font2">
+                            <a class="nav-link page-scroll text-gold font1" href="#showcase">フラワーレッスン</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link page-scroll text-white" href="#showcase">Showcase</a>
+                        <li class="nav-item py-1 font2">
+                            <a class="nav-link page-scroll text-gold font1" href="#price">料金</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link page-scroll text-white" href="#pricing">Pricing</a>
+                        <li class="nav-item py-1 font2">
+                            <a class="nav-link page-scroll text-gold font1" href="#pricing">サービスの流れ</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link page-scroll text-white" href="#team">Team</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link page-scroll text-white" href="#blog">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link page-scroll text-white" href="#contact">Contact</a>
+                        <li class="nav-item py-1 font2">
+                            <a class="nav-link page-scroll text-gold font1" href="#services">よくあるお問い合わせ</a>
                         </li>
                     </ul>
-                </div>
-            </div>
-        </nav>
+                </nav>
+            </header>
+        </div>
+
+
 
         <div class="overlay d-none d-md-block">
         </div>
@@ -118,7 +115,7 @@
                         <p class="font2 pb-3 font-weight-bold">LINEからのお申し込みで
                             <br>初回無料＆その他特典あり
                         </p>
-                        <a class="btn btn-common text-gold" href="#">無料体験を始める　→</a>
+                        <a class="btn btn-common text-gold" href="https://lin.ee/XVebsTM" target="_blank">無料体験を始める　→</a>
                     </div>
                 </div>
             </div>
@@ -280,7 +277,7 @@
                         <p class="font2 pb-3 font-weight-bold">LINEからのお申し込みで
                             <br>初回無料＆その他特典あり
                         </p>
-                        <a class="btn btn-common text-gold" href="#">無料体験を始める　→</a>
+                        <a class="btn btn-common text-gold" href="https://lin.ee/XVebsTM" target="_blank">無料体験を始める　→</a>
                     </div>
                 </div>
 
@@ -310,6 +307,30 @@
                     </div>
                 </div>
 
+                <!-- instagram start -->
+                <div id="instafeed"></div>
+                <script>
+                    $(function() {
+                        $.ajax({
+                            type: 'GET',
+                            url: 'https://graph.facebook.com/v3.0/17841415570480047?fields=name%2Cmedia.limit(5)%7Bcaption%2Clike_count%2Cmedia_url%2Cpermalink%2Ctimestamp%2Cusername%7D&access_token=EAAUFRHbJNPQBAL0Y5qVgBZBQUx50StRWhoRbggJ4wTWdYQYoAE9tU5ZC2sycHsCZCPcTTUWHAXSEPFwiIYSgfZBNxrY3zy3WAZATpghjqh8bX6SxyAgungo597BlCXIKDXRR33qsSzAaeeA5YVnXa3Sh5C0KyfZAPiQuva0TcKbGc7OGmmpqfH0gV5nllFZAjEZD',
+                            dataType: 'json',
+                            success: function(json) {
+                                var html = '';
+                                var insta = json.media.data;
+                                for (var i = 0; i < insta.length; i++) {
+                                    html += '<div ><a href="' + insta[i].permalink + '" target="_blank"><img src="' + insta[i].media_url + '"></a></div>';
+                                }
+                                $("#instafeed").append(html);
+                            },
+                            error: function() {
+                                //エラー時の処理
+                            }
+                        });
+                    });
+                </script>
+                <!-- instagram end -->
+
             </div>
             <!-- End Row -->
             <!-- Start Row -->
@@ -332,7 +353,7 @@
 
 
     <!-- Blog Section -->
-    <section id="blog" class="section">
+    <section id="price" class="section">
         <!-- Container Starts -->
         <div class="container">
             <!-- Start Row -->
@@ -381,7 +402,7 @@
                             <p style="font-size: 0.7rem">・2weekプラン、Every weekプランの発送はポストインです。</p>
                             <p style="font-size: 0.7rem">・注文し放題プランはポストイン不可（ゆうパック）</p>
                             <p style="font-size: 0.7rem">・ゆうパックの送料はお住まいの地域によって異なります。</p>
-                            <p style="font-size: 0.7rem">・〜プランはご注文から到着まで4日ほどかかります。</p>
+                            <p style="font-size: 0.7rem">・注文し放題プランはご注文から到着まで4日ほどかかります。</p>
                         </div>
 
                     </div>
@@ -434,7 +455,7 @@
                         <p class="font2 pb-3 font-weight-bold">LINEからのお申し込みで
                             <br>初回無料＆その他特典あり
                         </p>
-                        <a class="btn btn-common text-gold" href="#">無料体験を始める　→</a>
+                        <a class="btn btn-common text-gold" href="https://lin.ee/XVebsTM" target="_blank">無料体験を始める　→</a>
                     </div>
                 </div>
 
@@ -505,7 +526,7 @@
                         <p class="font2 pb-3 font-weight-bold">LINEからのお申し込みで
                             <br>初回無料＆その他特典あり
                         </p>
-                        <a class="btn btn-common text-gold" href="#">無料体験を始める　→</a>
+                        <a class="btn btn-common text-gold" href="https://lin.ee/XVebsTM" target="_blank">無料体験を始める　→</a>
                     </div>
                 </div>
             </div>
@@ -623,16 +644,20 @@
                     <!-- Start Col -->
                     <div class="col-lg-10 col-md-9 col-sm-9 col-7">
                         <div class="footer-logo">
-                            <h6 class="text-gold m-0">PLAISIR</h6>
+                            <h6 class="text-gold m-0" style="line-height:unset;">PLAISIR</h6>
                         </div>
                     </div>
                     <!-- End Col -->
 
                     <!-- Start Col -->
                     <div class="col-lg-2 col-md-3 col-sm-3 col-5">
-                        <div class="widget">
-                            <a href="" class="text-gold">LINE</a>
-                            <a href="" class="text-gold">Instagram</a>
+                        <div class="widget float-right">
+                            <a href="https://page.line.me/225wrhyd?openQrModal=true" target="_blank" class="text-gold px-1">
+                                <img src="img/LINE_APP.png" class="img-fluid" alt="" style="width: 30px">
+                            </a>
+                            <a href="" target="_blank" class="text-gold px-1">
+                                <img src="img/instagram.png" class="img-fluid" alt="" style="width: 30px">
+                            </a>
                         </div>
                     </div>
                     <!-- End Col -->
@@ -668,5 +693,12 @@
     <script src="js/nivo-lightbox.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('.drawer').drawer();
+        });
+    </script>
 
 </body></html>

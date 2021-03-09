@@ -131,14 +131,32 @@ a:not([href]):not([tabindex]):hover {
 }
 
 .bg-rose1 {
-    background-color: #79042D;
+    background-color: #79042D !important;
+}
+
+.bg-rose2 {
+    background-color: #610324 !important;
 }
 
 .bg-rose {
-    background-color: #79042D;
-    background: linear-gradient(95deg, #79042D 40%, #bd0000 100%);
-    ;
+    background-color: #79042D !important;
+    background: linear-gradient(95deg, #79042D 40%, #bd0000 100%) !important;
 }
+
+.drawer-hamburger-icon,
+.drawer-hamburger-icon:after,
+.drawer-hamburger-icon:before {
+
+    width: 100%;
+    height: 2px;
+    -webkit-transition: all .6s cubic-bezier(.19, 1, .22, 1);
+    transition: all .6s cubic-bezier(.19, 1, .22, 1);
+    background-color: #D3A371 !important;
+}
+.drawer-open .drawer-hamburger-icon {
+    background-color: transparent !important;
+}
+
 
 /* ==========================================================================
    Section Title
@@ -576,6 +594,42 @@ button:focus {
     margin: 5px;
     cursor: pointer;
     float: right;
+}
+
+.navbar-toggler .toggler-icon {
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    display: block;
+    margin: 5px 0;
+    position: relative;
+    transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out
+}
+
+.navbar-toggler.active .toggler-icon:nth-of-type(1) {
+    transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    top: 7px
+}
+
+.navbar-toggler.active .toggler-icon:nth-of-type(2) {
+    opacity: 0
+}
+
+.navbar-toggler.active .toggler-icon:nth-of-type(3) {
+    transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    top: -7px
 }
 
 .navbar-expand-xx .navbar-toggler i {
