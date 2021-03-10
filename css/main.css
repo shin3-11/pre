@@ -196,9 +196,9 @@ a:not([href]):not([tabindex]):hover {
     content: "";
     display: block;
     width: 2px;
-    height: 55px;
+    height: 50px;
     position: absolute;
-    top: 35%;
+    top: 40%;
     left: 0;
     -webkit-transform: translateY(-50%) rotate(-30deg);
     transform: translateY(-50%) rotate(-30deg);
@@ -209,9 +209,9 @@ a:not([href]):not([tabindex]):hover {
     content: "";
     display: block;
     width: 2px;
-    height: 55px;
+    height: 50px;
     position: absolute;
-    top: 35%;
+    top: 40%;
     right: 0;
     -webkit-transform: translateY(-50%) rotate(30deg);
     transform: translateY(-50%) rotate(30deg);
