@@ -2,9 +2,10 @@
     "use strict";
     /* Page Loader active
     ========================================================*/
-    $('#preloader').delay(1000).fadeOut(1000);
+    $(window).load(function () {
+        $('#preloader').delay(900).fadeOut(600);
 
-
+    });
     /* Testimonials Carousel 
     ========================================================*/
     var owl = $("#client-testimonial");
