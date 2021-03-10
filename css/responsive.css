@@ -26,6 +26,11 @@
     .hero-area .overlay :nth-child(1) {
         height: 294px !important;
     }
+
+    .pos-md {
+        position: absolute;
+        right: 0;
+    }
 }
 
 @media screen and (min-width: 1920px) {
@@ -47,6 +52,18 @@
 
     #showcase .showcase-slider .screenshot-thumb .fancy-table {
         padding-top: 100px;
+    }
+
+    .pos-md {
+        position: absolute;
+        right: 0;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .pos-md {
+        position: absolute;
+        right: 0;
     }
 }
 
@@ -163,6 +180,11 @@
         margin-bottom: 20px;
         margin-top: 20px;
     }
+
+    .pos-md {
+        position: absolute;
+        right: 0;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -261,6 +283,11 @@
 
     #testimonial .testimonial-area {
         width: 98%;
+    }
+
+    .pos-md {
+        position: absolute;
+        right: 0;
     }
 }
 
@@ -747,5 +774,10 @@
         color: black;
         font-style: italic;
         line-height: 33px;
+    }
+
+    .pos-md {
+        position: absolute;
+        right: 0;
     }
 }
