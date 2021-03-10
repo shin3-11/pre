@@ -478,7 +478,7 @@ button:focus {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #fff;
+    background-color: #79042D;
     z-index: 9999999;
 }
 
@@ -501,7 +501,7 @@ button:focus {
     height: 100%;
     border-radius: 100%;
     border: 7px solid transparent;
-    border-top-color: #79042D;
+    border-top-color: #D3A371;
 }
 
 #loader-1:before {
@@ -510,7 +510,7 @@ button:focus {
 }
 
 #loader-1:after {
-    border: 7px solid #fafafa;
+    border: 7px solid #79042D;
 }
 
 @keyframes spin {
