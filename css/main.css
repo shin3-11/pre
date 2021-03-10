@@ -191,6 +191,32 @@ a:not([href]):not([tabindex]):hover {
 
 }
 
+.bar-gold::before {
+    background-color: #d3a371;
+    content: "";
+    display: block;
+    width: 2px;
+    height: 55px;
+    position: absolute;
+    top: 35%;
+    left: 0;
+    -webkit-transform: translateY(-50%) rotate(-30deg);
+    transform: translateY(-50%) rotate(-30deg);
+}
+
+.bar-gold::after {
+    background-color: #d3a371;
+    content: "";
+    display: block;
+    width: 2px;
+    height: 55px;
+    position: absolute;
+    top: 35%;
+    right: 0;
+    -webkit-transform: translateY(-50%) rotate(30deg);
+    transform: translateY(-50%) rotate(30deg);
+}
+
 
 /* ==========================================================================
    Section Title
