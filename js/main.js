@@ -2,7 +2,9 @@
     "use strict";
     /* Page Loader active
     ========================================================*/
-    $('#preloader').fadeOut();
+    $('#preloader').delay(1000).fadeOut(1000);
+
+
     /* Testimonials Carousel 
     ========================================================*/
     var owl = $("#client-testimonial");
