@@ -168,6 +168,15 @@ a:not([href]):not([tabindex]):hover {
     background-color: transparent !important;
 }
 
+#particles-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
 #instafeed {
     display: flex;
     flex-wrap: wrap;
