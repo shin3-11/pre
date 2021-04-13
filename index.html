@@ -710,26 +710,33 @@
         $(function() {
             $('.drawer').drawer();
         });
+
     </script>
 
     <script>
         $(function() {
-            $.ajax({
-                type: 'GET',
-                url: 'https://graph.facebook.com/v3.0/17841445261115079?fields=name%2Cmedia.limit(6)%7Bcaption%2Clike_count%2Cmedia_url%2Cpermalink%2Ctimestamp%2Cusername%7D&access_token=EAAUFRHbJNPQBAL0Y5qVgBZBQUx50StRWhoRbggJ4wTWdYQYoAE9tU5ZC2sycHsCZCPcTTUWHAXSEPFwiIYSgfZBNxrY3zy3WAZATpghjqh8bX6SxyAgungo597BlCXIKDXRR33qsSzAaeeA5YVnXa3Sh5C0KyfZAPiQuva0TcKbGc7OGmmpqfH0gV5nllFZAjEZD',
-                dataType: 'json',
-                success: function(json) {
-                    var html = '';
-                    var insta = json.media.data;
-                    for (var i = 0; i < insta.length; i++) {
-                        html += '<div><a href="' + insta[i].permalink + '" target="_blank"><img src="' + insta[i].media_url + '"></a></div>';
-                    }
-                    $("#instafeed").append(html);
-                },
-                error: function() {
-                    //エラー時の処理
-                }
-            });
-        });
+                    $.ajax({
+                            type: 'GET',
+                            url: 'https://graph.facebook.com/v3.0/17841445261115079?fields=name%2Cmedia.limit(6)%7Bcaption%2Clike_count%2Cmedia_url%2Cpermalink%2Ctimestamp%2Cusername%7D&access_token=EAAUFRHbJNPQBAL0Y5qVgBZBQUx50StRWhoRbggJ4wTWdYQYoAE9tU5ZC2sycHsCZCPcTTUWHAXSEPFwiIYSgfZBNxrY3zy3WAZATpghjqh8bX6SxyAgungo597BlCXIKDXRR33qsSzAaeeA5YVnXa3Sh5C0KyfZAPiQuva0TcKbGc7OGmmpqfH0gV5nllFZAjEZD',
+                            dataType: 'json',
+                            success: function(json) {
+                                var html = '';
+                                var insta = json.media.data;
+                                for (var i = 0; i < insta.length; i++) {
+                                    if (insta[i].thumbnail_url) {
+                                        html += '<div><a href="' + insta[i].permalink + '" target="_blank"><img src="' + insta[i].media_url + '"></a></div>';
+                                    } else {
+                                        html += '<div><a href="' + insta[i].permalink + '" target="_blank"><img src="' + insta[i].media_url + '"></a></div>';
+                                    }
+                                    $("#instafeed").append(html);
+                                },
+                                error: function() {
+                                    //エラー時の処理
+                                }
+                            });
+                    });
+
     </script>
-</body></html>
+</body>
+
+</html>
