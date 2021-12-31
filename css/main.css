@@ -648,11 +648,11 @@ button:focus {
     color: #ffffff;
 }
 
-.navbar-expand-md .navbar-nav .active > .nav-link,
+.navbar-expand-md .navbar-nav .active>.nav-link,
 .navbar-expand-md .navbar-nav .nav-link.active,
 .navbar-expand-md .navbar-nav .nav-link.active:before,
 .navbar-expand-md .navbar-nav .nav-link.open,
-.navbar-expand-md .navbar-nav .open > .nav-link {
+.navbar-expand-md .navbar-nav .open>.nav-link {
     color: #ffffff;
 }
 
@@ -713,12 +713,25 @@ button:focus {
    Hero Area
    ========================================================================== */
 .hero-area {
-    background: url("../img/bg/home.png");
+    /* background: url("../img/bg/home.png"); */
+    background: url("../img/bg/plaisir24b.gif");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 15%;
     height: 100vh;
     position: relative;
+}
+
+@media screen and (max-width: 768px) {
+    .hero-area {
+        /* background: url("../img/bg/home.png"); */
+        background: url("../img/bg/plaisir24b.gif");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position-y: 30%;
+        height: 100vh;
+        position: relative;
+    }
 }
 
 .hero-area .overlay {
@@ -1204,7 +1217,7 @@ button:focus {
     font-size: 20px;
 }
 
-#showcase .showcase-slider .screenshot-thumb > .hover-content {
+#showcase .showcase-slider .screenshot-thumb>.hover-content {
     background-color: #3ecf8e;
     opacity: 0.90;
     height: 85%;
