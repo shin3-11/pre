@@ -714,7 +714,7 @@ button:focus {
    ========================================================================== */
 .hero-area {
     /* background: url("../img/bg/home.png"); */
-    background: url("../img/bg/plaisir24b.gif");
+    background: url("../img/bg/plaisir.gif");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 15%;
@@ -725,7 +725,7 @@ button:focus {
 @media screen and (max-width: 768px) {
     .hero-area {
         /* background: url("../img/bg/home.png"); */
-        background: url("../img/bg/plaisir24b.gif");
+        background: url("../img/bg/plaisir.gif");
         background-size: contain;
         background-repeat: no-repeat;
         background-position-y: 30%;
